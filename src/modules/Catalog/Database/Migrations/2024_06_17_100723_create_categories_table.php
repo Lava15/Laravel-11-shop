@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->json('description')->nullable();
             $table->boolean('is_active')->default(true);
+            $table->string('order')->default(999);
             $table->softDeletes();
             $table->timestamps();
         });

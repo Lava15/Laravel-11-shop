@@ -15,10 +15,11 @@ return new class extends Migration
         });
     }
 
-    if(!app()->isProduction) {
+    
     public function down(): void
         {
-            Schema::dropIfExists('{{ table }}');
-        }
-    }
+            if(!app()->isProduction) {
+                Schema::dropIfExists('{{ table }}');
+           }
+       }
 };

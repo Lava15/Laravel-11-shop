@@ -18,6 +18,5 @@ class CategoryServiceProvider extends ServiceProvider
             path: "__DIR__ . /../config.php",
             key: 'catalog.categories',
         );
-        $this->loadRoutesFrom(__DIR__ . '/../web.php');
     }
 }

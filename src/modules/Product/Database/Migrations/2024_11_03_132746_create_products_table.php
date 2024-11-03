@@ -11,6 +11,14 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id') ->nullable() ->constrained();
+            $table->string('name');
+            $table->text('description');
+            $table->float('price');
+            $table->boolean('is_active')->default(true);
+            $table->string('order')->default(999);
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -11,7 +11,11 @@ class CategoryTest extends TestCase
     public function categories_returns_a_successful_response(): void
     {
         $response = $this->get('api/v1/categories');
-
         $response->assertStatus(200);
+    }
+    /** @test */
+    public function categories_returns_record(): void {
+        $response = $this->get('api/v1/categories');
+        $response->assertJsonCount(1);   
     }
 }

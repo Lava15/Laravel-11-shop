@@ -1,10 +1,12 @@
 <?php
 
-namespace Modules\Category\Providers;
+declare(strict_types=1);
+
+namespace Modules\Catalog\V1\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class CategoryServiceProvider extends ServiceProvider
+final class CategoryServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
@@ -15,8 +17,8 @@ class CategoryServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
         $this->mergeConfigFrom(
-            path: "__DIR__ . /../config.php",
-            key: 'catalog.categories',
+            path: __DIR__ . '/../config.php',
+            key: 'catalog',
         );
     }
 }

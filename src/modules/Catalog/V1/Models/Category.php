@@ -1,10 +1,11 @@
 <?php
 declare (strict_types=1);
 
-namespace Modules\Category\Models;
+namespace Modules\Catalog\V1\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
@@ -16,5 +17,5 @@ class Category extends Model
         'description',
         'is_active',
         
-    ]
+    ];
 }
